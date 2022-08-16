@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    container_name: Backup-FE
+    image: fe_0810
+    restart: always
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - "/etc/localtime:/etc/localtime:ro"
+    ports:
+      - 80:3000
